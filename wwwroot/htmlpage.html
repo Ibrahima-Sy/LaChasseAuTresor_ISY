@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload</title>
+</head>
+<body>
+    <h1>Upload File</h1>
+    <form id="uploadForm">
+        <input type="file" id="fileInput" />
+        <button type="button" onclick="uploadFile()">Upload</button>
+    </form>
+
+    <script>
+        async function uploadFile() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+
+            const formData = new FormData();
+            formData.append("file", file);
+
+            try {
+                const response = await fetch("https://localhost:7203/api/map/upload", {
+                    method: "POST",
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Error: ${response.status}`);
+                }
+
+                const result = await response.json();
+                console.log("File uploaded successfully:", result);
+
+                // Run the game using the parsed map data
+                const runGameResponse = await fetch("https://localhost:7203/api/map/run-game", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(result) // Pass the map data
+                });
+
+                const gameResult = await runGameResponse.json();
+                console.log(gameResult);
+                console.log("Game processed. Downloading output...");
+
+                // Download the output file
+                const downloadLink = document.createElement('a');
+                downloadLink.href = `https://localhost:7203/api/map/download-output?filePath=${gameResult.OutputFilePath}`;
+                downloadLink.download = 'output.txt';
+                downloadLink.click();
+            } catch (error) {
+                console.error("Error uploading file:", error);
+            }
+        }
+    </script>
+
+</body>
+</html>

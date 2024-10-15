@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LaChasseAuTresor_ISY", "LaChasseAuTresor_ISY.csproj", "{64D4DA7E-9B13-4B08-AFC8-4F6E506F213F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LaChasseAuTresor_ISY.Tests", "..\LaChasseAuTresor_ISY.Tests\LaChasseAuTresor_ISY.Tests.csproj", "{A6C2B860-C7CF-4D62-AEA8-355DCC1BC2C3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{64D4DA7E-9B13-4B08-AFC8-4F6E506F213F} = {64D4DA7E-9B13-4B08-AFC8-4F6E506F213F}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64D4DA7E-9B13-4B08-AFC8-4F6E506F213F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64D4DA7E-9B13-4B08-AFC8-4F6E506F213F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64D4DA7E-9B13-4B08-AFC8-4F6E506F213F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64D4DA7E-9B13-4B08-AFC8-4F6E506F213F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6C2B860-C7CF-4D62-AEA8-355DCC1BC2C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6C2B860-C7CF-4D62-AEA8-355DCC1BC2C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6C2B860-C7CF-4D62-AEA8-355DCC1BC2C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6C2B860-C7CF-4D62-AEA8-355DCC1BC2C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A94212E-2AF2-43AE-8B5D-EC98423C984B}
+	EndGlobalSection
+EndGlobal
